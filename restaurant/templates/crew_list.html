@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Crew List</h2>
+  <a href="{% url 'create_crew' %}">Add Crew Member</a>
+  <ul>
+    {% for crew_member in crew_members %}
+      <li>{{ crew_member.name }} - {{ crew_member.contact }}</li>
+    {% empty %}
+      <li>No crew members found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

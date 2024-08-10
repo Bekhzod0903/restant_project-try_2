@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Transaction List</h2>
+  <a href="{% url 'create_transaction' %}">Add Transaction</a>
+  <ul>
+    {% for transaction in transactions %}
+      <li>Transaction ID: {{ transaction.id }} | Date: {{ transaction.trans_date }} | Customer: {{ transaction.customer.name }}</li>
+    {% empty %}
+      <li>No transactions found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

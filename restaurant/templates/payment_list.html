@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Payment List</h2>
+  <a href="{% url 'create_payment' %}">Add Payment</a>
+  <ul>
+    {% for payment in payments %}
+      <li>Payment ID: {{ payment.id }} | Amount: {{ payment.amount }} | Customer: {{ payment.customer.name }}</li>
+    {% empty %}
+      <li>No payments found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

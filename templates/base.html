@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'customer_list' %}">Customers</a>
+        <a href="{% url 'crew_list' %}">Crew</a>
+        <a href="{% url 'food_list' %}">Food</a>
+        <a href="{% url 'order_list' %}">Orders</a>
+        <a href="{% url 'payment_list' %}">Payments</a>
+        <a href="{% url 'transaction_list' %}">Transactions</a>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

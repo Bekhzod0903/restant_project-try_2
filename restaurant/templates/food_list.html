@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h2>Food List</h2>
+  <a href="{% url 'create_food' %}">Add Food Item</a>
+  <ul>
+    {% for food in foods %}
+      <li>
+        <img src="{{ food.image.url }}" alt="{{ food.name }}" style="max-width: 100px; max-height: 100px;">
+        {{ food.name }} - {{ food.price }} (Status: {{ food.get_status_display }})
+      </li>
+    {% empty %}
+      <li>No food items found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
